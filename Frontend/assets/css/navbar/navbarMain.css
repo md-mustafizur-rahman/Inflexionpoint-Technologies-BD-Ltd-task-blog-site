@@ -22,4 +22,7 @@
 .navbar-main-section {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 5;
 }
