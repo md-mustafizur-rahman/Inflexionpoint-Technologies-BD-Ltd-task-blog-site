@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+.recent-blog-post-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.recent-blog-post-inner {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.horzental-card {
+  margin: 20px;
+  min-width: 500px;
+  height: 200px;
+  width: 45%;
+}
+.horzental-card a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (max-width: 1200px) {
+  .horzental-card {
+    min-width: 100%;
+
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    .horzental-card {
+      min-width: 100%;
+     height: auto;
+      width: 100%;
+    }
+  }
