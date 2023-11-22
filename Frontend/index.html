@@ -26,6 +26,7 @@
     />
 
     <link rel="stylesheet" href="assets/css/navbar/navheader.css" />
+    <link rel="stylesheet" href="assets/css/navbar/navbarMain.css" />
 
     <title>Blog Site Task</title>
   </head>
@@ -68,10 +69,10 @@
     <!-- Navigation Header Top Section End -->
 
     <!-- Navigation Main Section start -->
-    <section>
+    <section class="navbar-main-section">
       <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary main-navbar">
+          <div class="container-fluid" >
             <a class="navbar-brand" href="#">MUSTAFIZUR BLOG</a>
             <button
               class="navbar-toggler"
@@ -92,31 +93,13 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Another action</a>
-                    </li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                  </ul>
+                  <a class="nav-link" href="#">Tech</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  <a class="nav-link" href="#">Education</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Business</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
@@ -126,7 +109,10 @@
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button class="btn btn-outline-success" type="submit">
+                <button
+                  class="btn btn-outline-success search-button"
+                  type="submit"
+                >
                   Search
                 </button>
               </form>
