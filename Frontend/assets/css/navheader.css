@@ -1,0 +1,139 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.nav-header {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-bottom: 0.2px solid rgb(174, 174, 174);
+  display: flex;
+}
+.nav-header-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-header-top-logo {
+  width: 40%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.nav-header-top-logo img{
+    width: 50%;
+}
+.nav-header-top-right {
+  width: 50%;
+  height: 100%;
+  /* background-color: rgb(128, 128, 128); */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-header-top-right ul {
+  display: flex;
+  width: 30%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+.nav-header-top-right ul a {
+  color: black;
+}
+
+.auth-button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.auth-link-button {
+  border: 1px solid black;
+  color: black;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  margin: 0px 5px 0px 5px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.auth-link-button:hover {
+   background-color: black;
+   color: white;
+   transition: 0.5s;
+  }
+#auth-link-singup-btn {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+#auth-link-singup-btn:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+
+@media only screen and (max-width: 1036px) {
+    .nav-header-top-right ul {
+       
+        width: 40%;
+     
+      }
+  }
+@media only screen and (max-width: 780px) {
+    .nav-header-top-logo{
+        width: 30%;
+    }
+    .nav-header-top-logo img{
+        width: 100%;
+    }
+    .nav-header-top-right{
+        width: 70%;
+    }
+    .nav-header-top-right ul {
+       
+        width: 40%;
+     
+      }
+  }
+
+  @media only screen and (max-width: 502px) {
+
+
+    .nav-header-top-right ul {
+       
+        width: 100%;
+     
+      }
+  }
+  @media only screen and (max-width: 444px) {
+
+
+    .nav-header-top-right ul {
+       
+       display: none;
+     
+      }
+      .nav-header-top-logo{
+        width: 50%;
+      }
+      .nav-header-top-right{
+        width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 322px) {
+
+
+      .nav-header-top-logo{
+        width: 40%;
+      }
+      .nav-header-top-right{
+        width: 50%;
+    }
+  }
