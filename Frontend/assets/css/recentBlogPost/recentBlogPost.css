@@ -24,8 +24,12 @@
 .horzental-card {
   margin: 20px;
   min-width: 500px;
-  height: 200px;
+  height: 180px;
   width: 45%;
+}
+
+.horzental-card img {
+height: 180px;
 }
 .horzental-card a {
   text-decoration: none;
