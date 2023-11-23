@@ -28,7 +28,7 @@
                 <div style="margin-top: 10px; display: inline-block;">
 
 
-                    <a href="" style="text-decoration: none; ">
+                    <a href="{{ route('page.bloglistByTag', ['tag' => 'tech']) }}" style="text-decoration: none; ">
                         <strong>Tech</strong>
                     </a>
                 </div>
@@ -37,7 +37,7 @@
                 <div style="margin-top: 10px; display: inline-block;">
 
 
-                    <a href="" style="text-decoration: none; ">
+                    <a href="{{ route('page.bloglistByTag', ['tag' => 'education']) }}" style="text-decoration: none; ">
                         <strong>Education</strong>
                     </a>
                 </div>
@@ -46,7 +46,7 @@
                 <div style="margin-top: 10px; display: inline-block;">
 
 
-                    <a href="" style="text-decoration: none; ">
+                    <a href="{{ route('page.bloglistByTag', ['tag' => 'business']) }}" style="text-decoration: none; ">
                         <strong>Business</strong>
                     </a>
                 </div>

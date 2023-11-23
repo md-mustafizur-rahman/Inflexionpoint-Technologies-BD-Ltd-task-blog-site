@@ -1,10 +1,9 @@
   <!-- Header Section Start -->
-  <header>
       <!-- Navigation Header Top Section Start  -->
       <section class="nav-header">
           <div class="container nav-header-inner">
               <div class="nav-header-top-logo">
-                  <a href=""> <img src="assets/img/logo/inf-logo.png" alt="" /></a>
+                  <a href="{{route('page.home')}}"> <img src="{{asset('assets/img/logo/inf-logo.png')}}" alt="" /></a>
               </div>
               <div class="nav-header-top-right">
                   <ul>
@@ -31,16 +30,16 @@
                           @auth
                           <a href="{{ url('/dashboard') }}" id="auth-link-dashboard-btn" class="auth-link-button">Dashboard</a>
                           @else
-                          <a href="{{ route('login') }}"  class="auth-link-button">Log in</a>
+                          <a href="{{ route('login') }}" class="auth-link-button">Log in</a>
 
                           @if (Route::has('register'))
-                          <a href="{{ route('register') }}" id="auth-link-singup-btn"  class="auth-link-button">Register</a>
+                          <a href="{{ route('register') }}" id="auth-link-singup-btn" class="auth-link-button">Register</a>
                           @endif
                           @endauth
                       </div>
                       @endif
 
-                  
+
                   </div>
               </div>
           </div>
@@ -52,7 +51,7 @@
           <div class="container">
               <nav class="navbar navbar-expand-lg bg-body-tertiary main-navbar">
                   <div class="container-fluid">
-                      <a class="navbar-brand" href="#"><strong style="
+                      <a class="navbar-brand" href="{{route('page.home')}}"><strong style="
                     background-color: black;
                     padding: 5px 10px 5px 10px;
                     color: white;
@@ -65,16 +64,19 @@
                       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                               <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                  <a class="nav-link active" aria-current="page" href="{{route('page.home')}}">Home</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Tech</a>
+                                  <a class="nav-link" href="{{ route('page.bloglistByTag', ['tag' => 'tech']) }}">Tech</a>
+
+
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Education</a>
+                                  <a class="nav-link" href="{{ route('page.bloglistByTag', ['tag' => 'education']) }}">Education</a>
+
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Business</a>
+                                  <a class="nav-link" href="{{ route('page.bloglistByTag', ['tag' => 'business']) }}">Business</a>
                               </li>
                           </ul>
                           <form class="d-flex" role="search">
@@ -89,5 +91,5 @@
           </div>
       </section>
       <!-- Navigation Main Section start -->
-  </header>
+
   <!-- Header Section End -->
