@@ -82,6 +82,11 @@
      background: black;
 
     }
+    .search button:hover{
+        background-color: white;
+        border-color: black;
+        color: black;
+    }
 
     .blog-tag-search{
         margin-top: 20px;
