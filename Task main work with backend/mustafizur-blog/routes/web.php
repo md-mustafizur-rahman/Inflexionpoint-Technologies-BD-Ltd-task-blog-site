@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,16 @@ Route::get('/blogs', [SiteController::class, 'getBlogListPage'])->name('page.blo
 Route::get('/blogs/{tag}', [SiteController::class, 'getBlogListPage'])->name('page.bloglistByTag');
 Route::get('/blog/details/{id}', [SiteController::class, 'getblogDetails'])->name('page.blogDetails');
 // SiteController Work End
+
+
+//AdminController Work Start
+Route::middleware('auth')->group(function () {
+    Route::get('/user-list', [AdminController::class, 'getUserList'])->name('page.userList');
+    Route::get('/user-list', [AdminController::class, 'getUserList'])->name('page.userList');
+    Route::get('/own-posts', [AdminController::class, 'getOwnPostsList'])->name('page.ownPosts');
+    Route::get('/all-posts', [AdminController::class, 'getAllPostsList'])->name('page.allPosts');
+});
+//AdminController Work End
 
 
 Route::get('/dashboard', function () {
