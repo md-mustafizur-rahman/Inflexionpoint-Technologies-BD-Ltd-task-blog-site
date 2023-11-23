@@ -15,7 +15,7 @@ class SiteController extends Controller
     {
         return view("fontPages.blogList");
     }
-    function getBlogListPageByTags($tag)
+    function getBlogListPageByCategoy($category)
     {
         return view("fontPages.blogList");
     }

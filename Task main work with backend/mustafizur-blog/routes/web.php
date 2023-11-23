@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 // SiteController Work Start
 Route::get('/', [SiteController::class, 'getHomePage'])->name('page.home');
 Route::get('/blogs', [SiteController::class, 'getBlogListPage'])->name('page.bloglist');
-Route::get('/blogs/{tag}', [SiteController::class, 'getBlogListPage'])->name('page.bloglistByTag');
+Route::get('/blogs/{category}', [SiteController::class, 'getBlogListPageByCategoy'])->name('page.bloglistByCategory');
 Route::get('/blog/details/{id}', [SiteController::class, 'getblogDetails'])->name('page.blogDetails');
 // SiteController Work End
 
