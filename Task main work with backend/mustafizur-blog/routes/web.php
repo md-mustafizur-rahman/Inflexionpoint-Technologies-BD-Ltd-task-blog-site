@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+// SiteController Work Start
+Route::get('/', [SiteController::class, 'getHomePage'])->name('page.home');
+Route::get('/blogs', [SiteController::class, 'getBlogListPage'])->name('page.bloglist');
+Route::get('/blogs/{tag}', [SiteController::class, 'getBlogListPage'])->name('page.bloglistByTag');
+Route::get('/blog/details/{id}', [SiteController::class, 'getblogDetails'])->name('page.blogDetails');
+// SiteController Work End
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,4 +38,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

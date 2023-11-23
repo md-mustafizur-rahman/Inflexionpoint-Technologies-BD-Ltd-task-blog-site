@@ -79,6 +79,17 @@
   transition: 0.5s;
 }
 
+#auth-link-dashboard-btn {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+#auth-link-dashboard-btn:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
 @media only screen and (max-width: 1036px) {
   .nav-header-top-right ul {
     width: 40%;
