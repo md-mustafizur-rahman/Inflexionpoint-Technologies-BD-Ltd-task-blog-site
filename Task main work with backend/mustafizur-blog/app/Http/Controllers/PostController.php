@@ -57,6 +57,31 @@ class PostController extends Controller
         }
     }
 
+    public function deleteOwnPost($id)
+    {
+        // Validate the incoming request
+     
+        // Find the blog post by ID
+        $blogPost = BlogPost::findOrFail($id);
+        if ($blogPost->author_id == Auth::id()) {
+
+
+
+            // Delete the associated image if it exists
+            if ($blogPost->image) {
+                Storage::disk('public')->delete('blog_images/' . $blogPost->image);
+            }
+
+            // Delete the blog post from the database
+            $blogPost->delete();
+
+            return redirect("/own-posts")->with('success', 'Post deleted successfully');
+        } else {
+            return redirect()->back();
+        }
+    }
+
+
 
 
     public function updatePost(Request $request,)

@@ -59,6 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/store-post', [PostController::class, 'storePost'])->name('storePost');
     Route::post('/update-post', [PostController::class, 'updatePost'])->name('updatePost');
     Route::get('/update-own-post/{id}', [PostController::class, 'getUpdateOwnPostPage'])->name('page.updateOwnPost');
+    Route::get('/delete-own-post/{id}', [PostController::class, 'deleteOwnPost'])->name('deleteOwnPost');
 });
 //PostController work End
 
