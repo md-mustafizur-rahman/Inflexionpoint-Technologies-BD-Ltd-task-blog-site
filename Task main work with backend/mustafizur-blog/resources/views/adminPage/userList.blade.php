@@ -56,9 +56,16 @@
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">1</td>
                                 <td class="px-6 py-4 whitespace-nowrap">
+
+                                    @if($user->image==null)
                                     <div class="flex-shrink-0">
-                                        <img src="https://i.pinimg.com/236x/d9/f0/c9/d9f0c959c093dc1bf714f39570418f48.jpg" alt="Image Alt Text" class="h-12 w-12 rounded-full">
+                                        <img src="https://cdn.vectorstock.com/i/1000x1000/43/95/default-avatar-photo-placeholder-icon-grey-vector-38594395.webp" alt="Image Alt Text" class="h-12 w-12 rounded-full">
                                     </div>
+                                    @else
+                                    <div class="flex-shrink-0">
+                                        <img src="{{ asset('storage/profile_images/' . $user->image) }}" alt="Image Alt Text" class="h-12 w-12 rounded-full">
+                                        @endif
+
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{$user->name}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{$user->email}}</td>
