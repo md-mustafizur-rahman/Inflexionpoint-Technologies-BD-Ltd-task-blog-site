@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -29,7 +30,7 @@ class PostController extends Controller
         // Update the blog post fields including the unique image name
         $blogPost->image = $uniqueImageName;
         $blogPost->post_title = $request->input('post_title');
-        $blogPost->content = $request->input('post_description');
+        $blogPost->post_description = $request->input('post_description');
         $blogPost->category = $request->input('category');
         $blogPost->feature = $request->input('feature', 0);
         $blogPost->author_id = auth()->id(); // Assuming you have authentication and an 'id' field in the users table
@@ -41,10 +42,28 @@ class PostController extends Controller
     }
 
 
-    public function updatePost(Request $request, $postId)
+
+
+    function getUpdateOwnPostPage($id)
+    {
+
+
+        $post = BlogPost::find($id);
+        if ($post->author_id == Auth::id()) {
+
+            return view("adminPage.updatePostPage", compact('post'));
+        } else {
+            return redirect()->back();
+        }
+    }
+
+
+
+    public function updatePost(Request $request,)
     {
         // Validate the incoming request
         $request->validate([
+            'id' => ['integer'],
             'post_title' => ['required', 'string'],
             'post_description' => ['required', 'string'],
             'category' => ['required', 'numeric'],
@@ -53,7 +72,7 @@ class PostController extends Controller
         ]);
 
         // Find the blog post by ID
-        $blogPost = BlogPost::findOrFail($postId);
+        $blogPost = BlogPost::findOrFail($request->id);
 
         // If an image is uploaded, update it
         if ($request->hasFile('image')) {
@@ -72,7 +91,7 @@ class PostController extends Controller
 
         // Update other blog post fields
         $blogPost->post_title = $request->input('post_title');
-        $blogPost->content = $request->input('post_description');
+        $blogPost->post_description = $request->input('post_description');
         $blogPost->category = $request->input('category');
         $blogPost->feature = $request->input('feature', 0);
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->string('post_title');
-            $table->text('content');
+            $table->text('post_description');
             $table->integer('category');
             $table->boolean('feature')->comment("1=yes, 0=no")->default(0);
             $table->unsignedBigInteger('author_id');

@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function () {
 //PostController work Start
 Route::middleware('auth')->group(function () {
     Route::post('/store-post', [PostController::class, 'storePost'])->name('storePost');
+    Route::post('/update-post', [PostController::class, 'updatePost'])->name('updatePost');
+    Route::get('/update-own-post/{id}', [PostController::class, 'getUpdateOwnPostPage'])->name('page.updateOwnPost');
 });
 //PostController work End
 

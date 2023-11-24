@@ -86,7 +86,8 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                                <a href="{{ route('page.updateOwnPost', ['id' => $post->id]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+
                                 <span class="text-gray-400 mx-2">|</span>
                                 <a href="#" class="text-red-500 hover:underline">Delete</a>
                             </td>
