@@ -10,17 +10,19 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form method="POST" action="#" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('storePost') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-4">
                             <label for="post_title" class="block text-gray-700 dark:text-gray-300">Post Title:</label>
-                            <input placeholder="Post title" type="text" name="post_title" id="post_title" class="form-input mt-1 block w-full" required />
+                            <input placeholder="Post title" type="text" name="post_title" id="post_title" class="form-input mt-1 block w-full" />
+                            <x-input-error :messages="$errors->get('post_title')" class="mt-2" />
                         </div>
 
                         <div class="mb-4">
                             <label for="post_description" class="block text-gray-700 dark:text-gray-300">Post Description:</label>
-                            <textarea name="name" id="post_description" class="form-input mt-1 block w-full" required></textarea>
+                            <textarea name="post_description" style="min-height: 222px;" id=" post_description" class="form-input mt-1 block w-full" ></textarea>
+                            <x-input-error :messages="$errors->get('post_description')" class="mt-2" />
                         </div>
 
                         <div class="mb-4">
@@ -30,6 +32,8 @@
                                 <option value="1">Education</option>
                                 <option value="2">Business</option>
                             </select>
+
+                            <x-input-error :messages="$errors->get('category')" class="mt-2" />
                         </div>
 
                         <div class="mb-4">
@@ -38,11 +42,14 @@
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
                             </select>
+
+                            <x-input-error :messages="$errors->get('feature')" class="mt-2" />
                         </div>
 
                         <div class="mb-4">
                             <label for="image" class="block text-gray-700 dark:text-gray-300">Image:</label>
-                            <input type="file" name="image" id="image" class="form-input mt-1 block w-full" accept="image/*" required />
+                            <input type="file" name="image" id="image" class="form-input mt-1 block w-full" accept="image/*"  />
+                            <x-input-error :messages="$errors->get('image')" class="mt-2" />
                         </div>
 
                         <div class="flex items-center justify-end">
@@ -55,14 +62,4 @@
             </div>
         </div>
     </div>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trumbowyg@2.26.0/dist/ui/trumbowyg.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.26.0/dist/trumbowyg.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#post_description').trumbowyg();
-        });
-    </script>
-
 </x-app-layout>

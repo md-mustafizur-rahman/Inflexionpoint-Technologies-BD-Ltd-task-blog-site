@@ -16,7 +16,7 @@
 
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
-                <table class="min-w-full divide-y divide-gray-200">
+            <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50 dark:bg-gray-700">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -35,10 +35,10 @@
                                 Category
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            FEATURED
+                                FEATURED
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                            Date
+                                Date
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                 Action
@@ -46,26 +46,59 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <!-- Add your table rows here -->
+                     
+              
+                               <!-- Add your table rows here -->
+                               @foreach($posts as $index => $post)
                         <tr class="border-b">
-                            <td class="px-6 py-4 whitespace-nowrap">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{$index+1}}</td>
+                            @if($post->image)
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <img src="{{ asset('storage/blog_images/' . $post->image) }}" alt="Sample Image" class="h-12 w-24 object-cover" />
+                            </td>
+                            @else
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <img src="https://via.placeholder.com/100x50" alt="Sample Image" class="h-12 w-24 object-cover" />
+
+                                @endif
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap">Author123</td>
-                            <td class="px-6 py-4 whitespace-nowrap max-w-xs overflow-ellipsis">This is a very long Post Title that should be</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Tag1, Tag2</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Yes</td>
-                            <td class="px-6 py-4 whitespace-nowrap">2023-11-24</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{$post->author_id}}</td>
+                            <td class="px-6 py-4 whitespace-nowrap max-w-xs overflow-ellipsis">
+                                {{ Illuminate\Support\Str::limit($post->post_title, 35) }}
+                            <td class="px-6 py-4 whitespace-nowrap">
+
+                                @if($post->category==0)
+                                Tech
+                                @elseif($post->category=1)
+                                Education
+                                @elseif($post->category=2)
+                                Business
+                                @endif
+
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+
+                                @if($post->feature==0)
+                                No
+                                @elseif($post->feature==1)
+                                Yes
+                                @endif
+
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                {{ $post->updated_at->format('Y-m-d') }}
+                            </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <a href="#" class="text-blue-500 hover:underline">Edit</a>
                                 <span class="text-gray-400 mx-2">|</span>
                                 <a href="#" class="text-red-500 hover:underline">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                         <!-- Add more rows as needed -->
                     </tbody>
                 </table>
+                <div style="margin-top: 30px;"> {{ $posts->links() }}</div>
             </div>
 
 
