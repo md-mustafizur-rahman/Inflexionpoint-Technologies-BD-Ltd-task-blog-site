@@ -23,9 +23,35 @@ class SiteController extends Controller
     {
         return view("fontPages.blogList");
     }
+
+
+    
     function getBlogListPageByCategoy($category)
     {
-        return view("fontPages.blogList");
+        if ($category) {
+            $categoryID = '';
+
+            switch ($category) {
+                case 'tech':
+                    $categoryID = 0;
+                    break;
+
+                case 'education':
+                    $categoryID = 1;
+                    break;
+
+                case 'business':
+                    $categoryID = 2;
+                    break;
+            }
+
+            $posts = BlogPost::where('category', $categoryID)
+                ->orderBy('updated_at', 'desc')
+                ->paginate(10);
+            return view("fontPages.blogList", compact('posts', 'category'));
+        } else {
+            return redirect()->back();
+        }
     }
 
     function getblogDetails($id)
