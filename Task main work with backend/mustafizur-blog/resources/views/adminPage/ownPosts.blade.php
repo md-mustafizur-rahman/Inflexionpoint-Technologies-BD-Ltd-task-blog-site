@@ -33,6 +33,9 @@
                                 Category
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                            FEATURED
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                 Date
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -49,6 +52,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap max-w-xs overflow-ellipsis">This is a very long Post Title that should be </td>
                             <td class="px-6 py-4 whitespace-nowrap">Tag1, Tag2</td>
+                            <td class="px-6 py-4 whitespace-nowrap">Yes</td>
                             <td class="px-6 py-4 whitespace-nowrap">2023-11-24</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <a href="#" class="text-blue-500 hover:underline">Edit</a>
