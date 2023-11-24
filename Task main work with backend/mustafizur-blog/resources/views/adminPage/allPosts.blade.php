@@ -16,7 +16,7 @@
 
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900 dark:text-gray-100">
-            <table class="min-w-full divide-y divide-gray-200">
+                <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50 dark:bg-gray-700">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -46,10 +46,10 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                     
-              
-                               <!-- Add your table rows here -->
-                               @foreach($posts as $index => $post)
+
+
+                        <!-- Add your table rows here -->
+                        @foreach($posts as $index => $post)
                         <tr class="border-b">
                             <td class="px-6 py-4 whitespace-nowrap">{{$index+1}}</td>
                             @if($post->image)
@@ -89,9 +89,9 @@
                                 {{ $post->updated_at->format('Y-m-d') }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <a href="#" class="text-blue-500 hover:underline">Edit</a>
+                                <a href="{{ route('page.updateAllUsersPost', ['id' => $post->id]) }}" class="text-blue-500 hover:underline">Edit</a>
                                 <span class="text-gray-400 mx-2">|</span>
-                                <a href="#" class="text-red-500 hover:underline">Delete</a>
+                                <a href="{{ route('deleteAllUsersPost', ['id' => $post->id]) }}" class="text-red-500 hover:underline">Delete</a>
                             </td>
                         </tr>
                         @endforeach

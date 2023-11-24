@@ -45,11 +45,11 @@ Route::middleware('auth')->group(function () {
 
 
 //UserRoleControlelr Work Start
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'Admin'])->group(function () {
     Route::get('/update-user-role/{id}', [UserRoleController::class, 'getUserRolePage'])->name('page.userRoleController');
-
     Route::post('/update-role', [UserRoleController::class, 'updateRole'])->name('updateRole');
 });
+
 //UserRoleControlelr Work End
 
 
@@ -60,6 +60,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/update-post', [PostController::class, 'updatePost'])->name('updatePost');
     Route::get('/update-own-post/{id}', [PostController::class, 'getUpdateOwnPostPage'])->name('page.updateOwnPost');
     Route::get('/delete-own-post/{id}', [PostController::class, 'deleteOwnPost'])->name('deleteOwnPost');
+});
+
+
+Route::middleware(['auth', 'Admin'])->group(function () {
+    Route::get('/update-all-user-post/{id}', [PostController::class, 'getUpdateAllUsersPost'])->name('page.updateAllUsersPost');
+    Route::get('/delete-all-user-post/{id}', [PostController::class, 'deleteAllUserPost'])->name('deleteAllUsersPost');
 });
 //PostController work End
 
