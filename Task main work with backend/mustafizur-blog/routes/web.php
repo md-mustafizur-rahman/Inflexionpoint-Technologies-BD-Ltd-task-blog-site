@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\UserRoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/all-posts', [AdminController::class, 'getAllPostsList'])->name('page.allPosts');
 });
 //AdminController Work End
+
+
+//UserRoleControlelr Work Start
+Route::middleware('auth')->group(function () {
+    Route::get('/update-user-role/{id}', [UserRoleController::class, 'getUserRolePage'])->name('page.userRoleController');
+
+    Route::post('/update-role', [UserRoleController::class, 'updateRole'])->name('updateRole');
+});
+//UserRoleControlelr Work End
 
 
 Route::get('/dashboard', function () {
