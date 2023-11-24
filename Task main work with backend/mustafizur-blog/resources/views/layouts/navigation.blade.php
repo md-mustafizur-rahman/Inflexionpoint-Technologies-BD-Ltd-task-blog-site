@@ -30,6 +30,13 @@
                 </div>
                 @endif
 
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('page.addPost')" :active="request()->routeIs('page.addPost')">
+                        {{ __('Add Post') }}
+                    </x-nav-link>
+                </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('page.ownPosts')" :active="request()->routeIs('page.ownPosts')">
                         {{ __('Own Posts List') }}
@@ -44,9 +51,15 @@
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <!-- Circular Image -->
+                            @if(Auth::user()->image)
                             <div class="rounded-full overflow-hidden">
                                 <img class="h-8 w-8" src="{{ asset('storage/profile_images/' . Auth::user()->image) }}" alt="User Image">
                             </div>
+                            @else
+                            <div class="rounded-full overflow-hidden">
+                                <img class="h-8 w-8" src="https://cdn.vectorstock.com/i/1000x1000/43/95/default-avatar-photo-placeholder-icon-grey-vector-38594395.webp" alt="User Image">
+                            </div>
+                            @endif
 
                             <div class="ms-1" style="display: flex;">
                                 {{ Auth::user()->name }}

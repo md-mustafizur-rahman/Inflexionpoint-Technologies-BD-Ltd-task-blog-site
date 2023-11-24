@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user-list', [AdminController::class, 'getUserList'])->name('page.userList');
     Route::get('/own-posts', [AdminController::class, 'getOwnPostsList'])->name('page.ownPosts');
     Route::get('/all-posts', [AdminController::class, 'getAllPostsList'])->name('page.allPosts');
+    Route::get('/add-posts', [AdminController::class, 'getAddPosts'])->name('page.addPost');
 });
 //AdminController Work End
 

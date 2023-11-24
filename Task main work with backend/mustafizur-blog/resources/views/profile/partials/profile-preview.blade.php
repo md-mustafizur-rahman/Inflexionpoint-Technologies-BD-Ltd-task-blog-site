@@ -10,9 +10,15 @@
     </header>
 
     <div class="flex items-center space-x-4 mt-6">
+        @if( $user->image)
         <div class="w-16 h-16 overflow-hidden rounded-full">
-        <img src="{{ asset('storage/profile_images/' . $user->image) }}" alt="Profile Image" class="object-cover w-full h-full">
+            <img src="{{ asset('storage/profile_images/' . $user->image) }}" alt="Profile Image" class="object-cover w-full h-full">
         </div>
+        @else
+        <div class="w-16 h-16 overflow-hidden rounded-full">
+            <img src="https://cdn.vectorstock.com/i/1000x1000/43/95/default-avatar-photo-placeholder-icon-grey-vector-38594395.webp" alt="Profile Image" class="object-cover w-full h-full">
+        </div>
+        @endif
 
         <div>
             <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ $user->name }}</h3>

@@ -37,4 +37,9 @@ class AdminController extends Controller
     {
         return view('adminPage.allPosts');
     }
+
+    function getAddPosts()
+    {
+        return view('adminPage.addPost');
+    }
 }
