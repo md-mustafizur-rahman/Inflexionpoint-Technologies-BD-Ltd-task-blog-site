@@ -42,6 +42,10 @@ folder means complete code of this project is inside this folder (When I design 
 1. Relationship (Many to one)  ERD of this Project
 ![Inflexionpoint-Technologies-BD-Ltd-task-blog-site](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/69722816-d44a-4648-8b70-c955d6ec2abb)
 ![Screenshot (91)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/70f6b1ed-f7db-4f43-8b27-0054ffbf6a6c)
+![Screenshot (92)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/820512f9-7a77-4710-8c70-3b507fd6e097)
+![Screenshot (93)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/50baab26-5d72-42ba-bf54-ad8eb893c5b9)
+
+
 
 
 **Responsive Frontend:**
