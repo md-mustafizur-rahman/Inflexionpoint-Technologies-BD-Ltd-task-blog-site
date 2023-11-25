@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('post_title');
             $table->text('post_description');
-            $table->integer('category');
+            $table->integer('category')->comment('tech=0, education=1, business=2');
             $table->boolean('feature')->comment("1=yes, 0=no")->default(0);
             $table->unsignedBigInteger('author_id');
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
