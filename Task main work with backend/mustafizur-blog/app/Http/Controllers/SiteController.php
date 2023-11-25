@@ -60,7 +60,7 @@ class SiteController extends Controller
         }
 
        
-        $posts = $query->latest()->paginate(1); 
+        $posts = $query->latest()->paginate(25); 
         return view('fontPages.blogList', compact('posts','searchQuery'));
       
     }
