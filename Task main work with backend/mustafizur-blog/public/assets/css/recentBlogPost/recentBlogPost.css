@@ -56,6 +56,28 @@ height: 180px;
     background-color: black;
     border-color: black;
   }
+  
+  @media only screen and (max-width: 768px) {
+    .horzental-card {
+      min-width: 100%;
+     height: auto;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .horzental-card {
+      min-width: 90%;
+     height: auto;
+      width: 90%;
+    }
+  }
+
+  .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: black;
+    border-color: black;
+  }
+
 
 
   
