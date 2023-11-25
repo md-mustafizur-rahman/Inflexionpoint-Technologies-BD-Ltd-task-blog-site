@@ -1,11 +1,14 @@
 # Inflexionpoint-Technologies-BD-Ltd-task-blog-site
 
-**Run Process:**
+**Introduction:**
 1. All Laravel code is written inside the Task main work with backend
 folder means complete code of this project is inside this folder (When I design a website, I always refer to or comfortably fill a folder named Fontend to store html, css, js or font related tasks and then deploy Laravel.So I created Frontend Folder).
 ![Screenshot (81)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/b0589a79-4b04-4241-8b10-94d6fdf887aa)
 
-3. Run: npm run dev (Because i cant build npm for this project)
+
+
+**Run Process:**
+1. Run: npm run dev (Because i cant build npm for this project)
 2. Run Migrate Command(php artisan migrate)
 3. Make a account using Register.(For Authentication I have to use Laravel Breeze)
 4. A User can change their name, email and update profile image
