@@ -36,3 +36,9 @@ folder means complete code of this project is inside this folder (When I design 
 ![Screenshot (87)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/769e3d41-c7cf-4d41-a7c2-2a0d8b8fede2)
 ![Screenshot (86)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/f080fdc3-539e-48c7-a4d7-a5d88af692b6)
 
+
+
+**Database Design:**
+
+
+
