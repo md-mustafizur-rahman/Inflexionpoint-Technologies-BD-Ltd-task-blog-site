@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class BlogPost extends Model
 {
     use HasFactory;
+
+    // Define the many-to-one relationship
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
 }

@@ -59,10 +59,9 @@ class SiteController extends Controller
                 ->orWhere('author_id', '=', $searchQuery);
         }
 
-       
-        $posts = $query->latest()->paginate(25); 
-        return view('fontPages.blogList', compact('posts','searchQuery'));
-      
+
+        $posts = $query->latest()->paginate(25);
+        return view('fontPages.blogList', compact('posts', 'searchQuery'));
     }
 
 
@@ -97,6 +96,18 @@ class SiteController extends Controller
 
     function getblogDetails($id)
     {
-        return view("fontPages.blogSinglePage");
+
+
+        $post = BlogPost::with('user')->find($id);
+
+        if (!$post) {
+            abort(404);
+        }
+
+
+        $allPosts = BlogPost::orderBy('updated_at', 'desc')->limit(6)->get();
+
+
+        return view("fontPages.blogSinglePage", compact('post', 'allPosts'));
     }
 }

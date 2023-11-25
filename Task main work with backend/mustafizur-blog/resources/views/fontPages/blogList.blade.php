@@ -88,7 +88,7 @@
             @foreach($posts as $post)
 
             <div class="card vartical-card" style="min-width: 280px; max-width: 25%">
-                <a href="">
+                <a href="{{route('page.blogDetails',['id'=>$post->id])}}">
                     @if($post->image)
 
                     <img src="{{ asset('storage/blog_images/' . $post->image) }}" class="card-img-top" alt="Image" />

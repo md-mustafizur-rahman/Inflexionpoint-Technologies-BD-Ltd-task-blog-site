@@ -33,7 +33,7 @@
 
             @foreach($featurePosts as $featurePost)
             <div class="card vartical-card" style="min-width: 280px; max-width: 25%">
-                <a href="">
+                <a href="{{route('page.blogDetails',['id'=>$featurePost->id])}}">
 
                     @if($featurePost->image)
 
@@ -88,7 +88,7 @@
 
             @foreach($allPosts as $allPost)
             <div class="card mb-3 horzental-card">
-                <a href="">
+                <a href="{{route('page.blogDetails',['id'=>$allPost->id])}}">
                     <div class="row g-0">
                         <div class="col-md-4">
                             @if($allPost->image)
