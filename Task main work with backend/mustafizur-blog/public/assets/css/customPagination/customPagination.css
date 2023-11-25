@@ -1,0 +1,14 @@
+.custom-pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.page-link {
+    color: black;
+    
+}
+.active>.page-link, .page-link.active{
+    background-color: black;
+    border-color: black;
+}

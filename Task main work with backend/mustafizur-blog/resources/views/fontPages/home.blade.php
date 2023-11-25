@@ -34,7 +34,16 @@
             @foreach($featurePosts as $featurePost)
             <div class="card vartical-card" style="min-width: 280px; max-width: 25%">
                 <a href="">
-                    <img src="https://images.unsplash.com/photo-1516648064-ee10acfa64db?q=80&w=2063&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="..." />
+
+                    @if($featurePost->image)
+
+                    <img src="{{ asset('storage/blog_images/' . $featurePost->image) }}" class="card-img-top" alt="Image" />
+                    @else
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiT-UHSm6w0Jperb8SitpfoAKeMUE3uynPg5YO-2Drw&s" class="card-img-top" alt="Image" />
+                    @endif
+
+
                     <div class="card-body">
                         <h5 class="card-title">
 
@@ -82,7 +91,14 @@
                 <a href="">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img style="object-fit: cover; width: 100%" src="https://images.unsplash.com/photo-1516648064-ee10acfa64db?q=80&w=2063&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-start" alt="..." />
+                            @if($allPost->image)
+
+                            <img src="{{ asset('storage/blog_images/' .$allPost->image) }}" class="card-img-top" alt="Image" />
+                            @else
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiT-UHSm6w0Jperb8SitpfoAKeMUE3uynPg5YO-2Drw&s" class="card-img-top" alt="Image" />
+                            @endif
+
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

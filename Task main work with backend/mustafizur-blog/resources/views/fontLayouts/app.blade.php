@@ -21,10 +21,8 @@
   <link rel="stylesheet" href="{{asset('assets/css/featureBlogPost/featureBlogPost.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/css/recentBlogPost/recentBlogPost.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/css/blogTopSearch/blogTopSearch.css')}}" />
-  <link
-      rel="stylesheet"
-      href="{{asset('assets/css/SinglePageDesign/singlePageDesign.css')}}"
-    />
+  <link rel="stylesheet" href="{{asset('assets/css/SinglePageDesign/singlePageDesign.css')}}" />
+  <link rel="stylesheet" href="{{asset('assets/css/customPagination/customPagination.css')}}">
 
 
 

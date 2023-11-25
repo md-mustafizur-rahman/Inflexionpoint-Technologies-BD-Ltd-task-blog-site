@@ -91,7 +91,7 @@ class AdminController extends Controller
             $searchQueryLower = strtolower($searchQuery);
 
             $query->whereRaw('LOWER(post_title) LIKE ?', ["%$searchQueryLower%"])
-                ->orWhereRaw('LOWER(content) LIKE ?', ["%$searchQueryLower%"])
+                ->orWhereRaw('LOWER(post_description) LIKE ?', ["%$searchQueryLower%"])
                 ->orWhere(function ($query) use ($searchQueryLower) {
                     // Map 'tech' to 0, 'education' to 1, 'business' to 2
                     $categoryMapping = [
@@ -127,5 +127,14 @@ class AdminController extends Controller
     function getAddPostPage()
     {
         return view('adminPage.addPostPage');
+    }
+
+
+    function getDashboardPage()
+    {
+        $query = BlogPost::query();
+        $totalPost = $query->where('author_id', Auth()->user()->id)->count();
+
+        return view('adminPage.dashboard', compact('totalPost'));
     }
 }
