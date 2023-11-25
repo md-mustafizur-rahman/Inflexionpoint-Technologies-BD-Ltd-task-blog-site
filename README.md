@@ -1,7 +1,8 @@
 # Inflexionpoint-Technologies-BD-Ltd-task-blog-site
 Run Process:
-1. Run: npm run dev (Because i cant build npm for this project)
-2.Run Migrate Command(php artisan migrate)
+1. All Laravel code is written inside this folder means complete code of this project is inside this folder (When I design a website, I always refer to or comfortably fill a folder named Fontend to store html, css, js or font related tasks and then deploy Laravel.So I created Fontend Folder).
+2. Run: npm run dev (Because i cant build npm for this project)
+2. Run Migrate Command(php artisan migrate)
 3. Make a account using Register.
 4. A User can change their name, email and update profile image
  ![Screenshot (77)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/079d1b8f-01aa-4372-bcbd-4ef7dce2a60c)
