@@ -7,7 +7,7 @@ folder means complete code of this project is inside this folder (When I design 
 
 3. Run: npm run dev (Because i cant build npm for this project)
 2. Run Migrate Command(php artisan migrate)
-3. Make a account using Register.
+3. Make a account using Register.(For Authentication I have to use Laravel Breeze)
 4. A User can change their name, email and update profile image
  ![Screenshot (77)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/079d1b8f-01aa-4372-bcbd-4ef7dce2a60c)
 
@@ -26,7 +26,7 @@ folder means complete code of this project is inside this folder (When I design 
 ![Screenshot (73)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/95916acc-8a25-4857-88e3-9ea78fdbbe1d)
 ![Screenshot (74)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/10d9912d-2a1c-47c1-9154-3a43132aaaf4)
 
-12. Api Section without Token
+12. Api Section without Token.(For api Authentication I have to use Laravel Sanctum)
 ![Screenshot (84)](https://github.com/md-mustafizur-rahman/Inflexionpoint-Technologies-BD-Ltd-task-blog-site/assets/51951413/1be26dfa-92d1-49ff-9165-6e386001654c)
 
 13. Perform Login
