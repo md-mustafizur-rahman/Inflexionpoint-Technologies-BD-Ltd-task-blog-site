@@ -89,7 +89,11 @@
                                 <a href="{{ route('page.updateOwnPost', ['id' => $post->id]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
 
                                 <span class="text-gray-400 mx-2">|</span>
-                                <a href="{{ route('deleteOwnPost', ['id' => $post->id]) }}" class="text-red-500 hover:underline">Delete</a>
+                                <form action="{{ route('deleteOwnPost', ['id' => $post->id]) }}" method="post" style="display: inline;">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="text-red-500 hover:underline">Delete</button>
+                                </form>
                             </td>
                         </tr>
                         <!-- Add more rows as needed -->

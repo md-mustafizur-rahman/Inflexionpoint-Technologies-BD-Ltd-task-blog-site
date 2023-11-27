@@ -32,7 +32,7 @@ Route::get('/blog/details/{id}', [SiteController::class, 'getblogDetails'])->nam
 
 
 //AdminController Work Start
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/user-list', [AdminController::class, 'getUserList'])->name('page.userList');
     Route::get('/user-list', [AdminController::class, 'getUserList'])->name('page.userList');
     Route::get('/own-posts', [AdminController::class, 'getOwnPostsList'])->name('page.ownPosts');
@@ -46,9 +46,9 @@ Route::middleware(['auth','verified'])->group(function () {
 
 
 //UserRoleControlelr Work Start
-Route::middleware(['auth', 'Admin','verified'])->group(function () {
+Route::middleware(['auth', 'Admin', 'verified'])->group(function () {
     Route::get('/update-user-role/{id}', [UserRoleController::class, 'getUserRolePage'])->name('page.userRoleController');
-    Route::post('/update-role', [UserRoleController::class, 'updateRole'])->name('updateRole');
+    Route::put('/update-role', [UserRoleController::class, 'updateRole'])->name('updateRole');
 });
 
 //UserRoleControlelr Work End
@@ -56,24 +56,24 @@ Route::middleware(['auth', 'Admin','verified'])->group(function () {
 
 
 //PostController work Start
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/store-post', [PostController::class, 'storePost'])->name('storePost');
-    Route::post('/update-post', [PostController::class, 'updatePost'])->name('updatePost');
+    Route::put('/update-post', [PostController::class, 'updatePost'])->name('updatePost');
     Route::get('/update-own-post/{id}', [PostController::class, 'getUpdateOwnPostPage'])->name('page.updateOwnPost');
-    Route::get('/delete-own-post/{id}', [PostController::class, 'deleteOwnPost'])->name('deleteOwnPost');
+    Route::delete('/delete-own-post/{id}', [PostController::class, 'deleteOwnPost'])->name('deleteOwnPost');
 });
 
 
-Route::middleware(['auth', 'Admin','verified'])->group(function () {
+Route::middleware(['auth', 'Admin', 'verified'])->group(function () {
     Route::get('/update-all-user-post/{id}', [PostController::class, 'getUpdateAllUsersPost'])->name('page.updateAllUsersPost');
-    Route::get('/delete-all-user-post/{id}', [PostController::class, 'deleteAllUserPost'])->name('deleteAllUsersPost');
+    Route::delete('/delete-all-user-post/{id}', [PostController::class, 'deleteAllUserPost'])->name('deleteAllUsersPost');
 });
 //PostController work End
 
 
 
 
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

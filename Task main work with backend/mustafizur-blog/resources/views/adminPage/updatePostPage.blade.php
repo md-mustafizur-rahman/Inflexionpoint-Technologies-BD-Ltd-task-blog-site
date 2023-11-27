@@ -12,6 +12,8 @@
 
                     <form method="POST" action="{{ route('updatePost') }}" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
+
 
                         <div hidden class="mb-4">
 

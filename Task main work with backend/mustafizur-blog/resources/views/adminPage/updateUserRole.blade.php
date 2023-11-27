@@ -10,6 +10,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form method="POST" action="{{route('updateRole')}}">
                         @csrf
+                        @method('PUT')
 
                         <div class="mb-4">
                             <label for="id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">ID</label>
