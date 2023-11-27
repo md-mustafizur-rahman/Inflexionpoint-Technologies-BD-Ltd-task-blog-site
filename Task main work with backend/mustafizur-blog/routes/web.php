@@ -48,7 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //UserRoleControlelr Work Start
 Route::middleware(['auth', 'Admin', 'verified'])->group(function () {
     Route::get('/update-user-role/{id}', [UserRoleController::class, 'getUserRolePage'])->name('page.userRoleController');
-    Route::put('/update-role', [UserRoleController::class, 'updateRole'])->name('updateRole');
+    Route::patch('/update-role', [UserRoleController::class, 'updateRole'])->name('updateRole');
 });
 
 //UserRoleControlelr Work End
