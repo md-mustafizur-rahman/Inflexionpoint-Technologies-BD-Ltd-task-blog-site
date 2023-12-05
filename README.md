@@ -1,4 +1,4 @@
-# Inflexionpoint-Technologies-BD-Ltd-task-blog-site
+# MUSTAFIZUR BLOG
 
 **Introduction:**
 1. All Laravel code is written inside the Task main work with backend
